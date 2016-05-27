@@ -1,0 +1,133 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TribalWarsHelper"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="TribalWarsHelper.NewAttack"
+        mc:Ignorable="d"
+        Title="Nowy Atak" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <xctk:DateTimePicker x:Name="dateTimePicker" VerticalAlignment="Center" HorizontalAlignment="Center" Format="Custom" FormatString="HH:mm:ss" TimeFormat="Custom" Kind="Local" Maximum="12/31/2016 23:59:00" Grid.Column="2"/>
+        <Label x:Name="LblTime" Content="Wybierz czas ataku: " HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label x:Name="LblCoordsDest" Content="Wpisz lokalizację wioski docelowej:" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2"/>
+        <Grid x:Name="ArmyGrid" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Margin="5,10,0,0" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="33">
+                <Label x:Name="LblSpearFighter" Content="P" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Width="33">
+                <Label x:Name="LblSwordman" Content="M" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="33">
+                <Label x:Name="LblAxeman" Content="T" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="33">
+                <Label x:Name="LblArcher" Content="Ł" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="33">
+                <Label x:Name="LblScout" Content="Z" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="33">
+                <Label x:Name="LblLightCalvary" Content="LK" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="33">
+                <Label x:Name="LblMountedArcher" Content="ŁK" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="7" HorizontalAlignment="Center" VerticalAlignment="Center" Width="33">
+                <Label x:Name="LblHeavyCalvary" Content="CK" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="8" HorizontalAlignment="Center" VerticalAlignment="Center" Width="33">
+                <Label x:Name="LblRam" Content="TAR" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="9" HorizontalAlignment="Center" VerticalAlignment="Center" Width="33">
+                <Label x:Name="LblCatapult" Content="KAT" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="33">
+                <Label x:Name="LblPaladin" Content="RYC" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="11" HorizontalAlignment="Center" VerticalAlignment="Center" Width="33">
+                <Label x:Name="LblNobleman" Content="SZL" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Width="33">
+                <xctk:MaskedTextBox x:Name="TxtSpearFighter" MaxLength="4" PromptChar=" " Mask="0000" MouseLeftButtonDown="AlignInputToLeft"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Width="33" Grid.Column="1">
+                <xctk:MaskedTextBox x:Name="TxtSwordman" MaxLength="4" PromptChar=" " Mask="0000" />
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Width="33" Grid.Column="2">
+                <xctk:MaskedTextBox x:Name="TxtAxeman" MaxLength="4" PromptChar=" " Mask="0000" />
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Width="33" Grid.Column="3">
+                <xctk:MaskedTextBox x:Name="TxtArcher" MaxLength="4" PromptChar=" " Mask="0000" />
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Width="33" Grid.Column="4">
+                <xctk:MaskedTextBox x:Name="TxtScout" MaxLength="4" PromptChar=" " Mask="0000" />
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Width="33" Grid.Column="5">
+                <xctk:MaskedTextBox x:Name="TxtLightCalvary" MaxLength="4" PromptChar=" " Mask="0000" />
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Width="33" Grid.Column="6">
+                <xctk:MaskedTextBox x:Name="TxtMountedArcher" MaxLength="4" PromptChar=" " Mask="0000" />
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Width="33" Grid.Column="7">
+                <xctk:MaskedTextBox x:Name="TxtHeavyCalvary" MaxLength="4" PromptChar=" " Mask="0000" />
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Width="33" Grid.Column="8">
+                <xctk:MaskedTextBox x:Name="TxtRam" MaxLength="4" PromptChar=" " Mask="0000" />
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Width="33" Grid.Column="9">
+                <xctk:MaskedTextBox x:Name="TxtCatapult" MaxLength="4" PromptChar=" " Mask="0000" />
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Width="33" Grid.Column="10">
+                <xctk:MaskedTextBox x:Name="TxtPaladin" MaxLength="4" PromptChar=" " Mask="0000" />
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Width="33" Grid.Column="11">
+                <xctk:MaskedTextBox x:Name="TxtNobleman" MaxLength="4" PromptChar=" " Mask="0000" />
+            </Border>
+        </Grid>
+        <Grid x:Name="BtnGrid" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2" Margin="0,10,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="BtnConfirm" Content="Zatwierdź" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Click="BtnConfirm_Click" IsCancel="True"/>
+            <Button x:Name="BtnCancel" Content="Anuluj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Row="1" Margin="0,5,0,0" IsCancel="True"/>
+        </Grid>
+        <Label x:Name="LblCoorsSrc" Content="Wybierz lokalizacje wioski źródłowej: " HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1"/>
+        <ComboBox x:Name="CbxVillSrc" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" ScrollViewer.CanContentScroll="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectedIndex="0" Padding="20,3,5,3"/>
+        <xctk:MaskedTextBox x:Name="TxtVillDest" Grid.Column="2" Grid.Row="2" TextWrapping="Wrap" VerticalContentAlignment="Center" Height="22" Mask="000\|000" HorizontalContentAlignment="Center" Text="___|___"/>
+
+
+    </Grid>
+</Window>

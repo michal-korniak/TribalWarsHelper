@@ -1,0 +1,31 @@
+﻿Alpha 0.1
+-Pierwsza wersja
+
+Alpha 0.2
+-Zmienie interfejsu NewAttack.xaml:
+	-jeden textBox zamiast dwóch dla wioski docelowej
+	-wycentrowanie comboBoxa i textBoxa dla lokalizacji wiosek
+Drobne poprawki interfejsu
+	-Ujednolicenie zapisów lokalizacji wiosek na XXX|YYY
+	-Wycentrowanie danych w listView
+	-Zmiana textboxów od wojska na maskedboxy 
+Multithreading
+Poprawienie funkcji sprawdzającej czy sesja jest wygasła.
+Zmiana FirefoxDriver na ukrytą przeglądarkę PhantomJS
+Wyłączenie obrazków w przeglądarce(PhantomJS).
+Szablony ataków
+	-Zapisywane w pliku
+	-Bez daty, tylko odstępy między atakami, niech użytkownik wpisze od ktorej godziny zaczynamy, a pozniej sie wyliczy
+
+Plany:
+
+Globalne obsługiwanie błędów
+
+Wprowadzenie zegara w statusbarze.
+
+Sprawdzanie czy jest połączenie z siecią przy logowaniu.
+
+Poprawa maskedboxow dla wojsk (fajnie by było jakby po kliknięciu od razu wracaly do początku)
+
+zapisywanie ostatnich danych logowania
+
