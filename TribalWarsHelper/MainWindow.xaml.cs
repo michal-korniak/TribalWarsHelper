@@ -55,7 +55,7 @@ namespace TribalWarsHelper
             };
             #endregion
             #region work.DoWork
-            work.DoWork += (s1, e1) =>         
+            work.DoWork += (s1, e1) =>
             {
 
                 LoginData loginData = (LoginData)e1.Argument;
@@ -84,8 +84,16 @@ namespace TribalWarsHelper
                     return;
                 }
 
-                (new WebDriverWait(webDriver, TimeSpan.FromSeconds(20))).
-                    Until((d) => { return d.FindElement(By.ClassName("world_button_active")); });       //waiting for fully load
+                try
+                {
+                    (new WebDriverWait(webDriver, TimeSpan.FromSeconds(5))).
+                                        Until((d) => { return d.FindElement(By.ClassName("world_button_active")); });       //waiting for fully load
+                }
+                catch (Exception)
+                {
+                    (s1 as BackgroundWorker).ReportProgress(0, "Ten swiat nie jest aktywny.");
+                    e1.Result = false;
+                }
 
                 bool loaded = false;
 
@@ -121,10 +129,17 @@ namespace TribalWarsHelper
                     EnableLoginButtons(true);
             };
             #endregion
-
-            work.RunWorkerAsync(new LoginData() { Login = TxtLogin.Text, Password = TxtPassword.Password, World = int.Parse(TxtWorld.Text.Trim()) });
-        }       //multithreading
-
+            try
+            {
+                work.RunWorkerAsync(new LoginData() { Login = TxtLogin.Text, Password = TxtPassword.Password, World = int.Parse(TxtWorld.Text.Trim()) });
+            }       //multithreading
+            catch
+            {
+                addLog("Jedno z danych wejściowych jest puste.");
+                EnableLoginButtons(true);
+                return;
+            }
+        }
         private void EnableLoginButtons(bool enable)
         {
             if(enable==false)
